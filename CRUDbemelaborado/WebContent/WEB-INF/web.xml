@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+    id="WebApp_ID" version="3.1">
+    <welcome-file-list>
+      <welcome-file>usuarioformulario.jsp</welcome-file>
+   </welcome-file-list>
+    <display-name>Usuarios</display-name>
+ 
+    <context-param>
+        <param-name>dburl</param-name>
+        <param-value>jdbc:mysql://localhost/struts</param-value>
+    </context-param>
+ 
+    <context-param>
+        <param-name>dblogin</param-name>
+        <param-value>root</param-value>
+    </context-param>
+ 
+    <context-param>
+        <param-name>dbpass</param-name>
+        <param-value></param-value>
+    </context-param>
+ 
+    <servlet>
+        <servlet-name>MainController</servlet-name>
+        <servlet-class>org.bemelaborado.action.MainController</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>MainController</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+ 
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/Error.jsp</location>
+    </error-page>
+</web-app>
